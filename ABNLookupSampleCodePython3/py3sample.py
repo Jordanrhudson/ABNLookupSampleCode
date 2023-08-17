@@ -4,11 +4,10 @@ import urllib.request as req
 #Note, this service requires all parameters to be specified, even if you specify no query parameter
 #The parameters specified below will search for an entity with  the name 'coles' with postcode '2250'
 #In this case, unspecified search parameters all default to 'Y' 
-#(i.e. will search for the legal & trading name 'coles' in all States and Territories
+#(i.e. will search for the legal name 'coles' in all States and Territories
 name = 'coles'
 postcode = '2250'
-legalName = ''		
-tradingName = ''	
+legalName = ''			
 NSW = ''			
 SA = ''				
 ACT = ''			
@@ -23,10 +22,9 @@ authenticationGuid = ''		#Your GUID should go here
 #GETs the url (using urllib.request.urlopen)
 conn = req.urlopen('https://abr.business.gov.au/abrxmlsearchRPC/AbrXmlSearch.asmx/' + 
 					'ABRSearchByNameSimpleProtocol?name=' + name + 
-					'&postcode=' + postcode + '&legalName=' + legalName + 
-					'&tradingName=' + tradingName + '&NSW=' + NSW + 
-					'&SA=' + SA + '&ACT=' + ACT + '&VIC=' +  VIC + 
-					'&WA=' + WA + '&NT=' + NT + '&QLD=' + QLD + 
+					'&postcode=' + postcode + '&legalName=' + legalName 
+		   			+ '&NSW=' + NSW + '&SA=' + SA + '&ACT=' + ACT + 
+		   			'&VIC=' +  VIC + '&WA=' + WA + '&NT=' + NT + '&QLD=' + QLD + 
 					'&TAS=' + TAS + '&authenticationGuid=' + authenticationGuid)
 					
 #XML is returned by the webservice
